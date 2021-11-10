@@ -1,19 +1,36 @@
 # MySQL
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/demoDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#    username: root
+#    password: MySQL
+#  jpa:
+#    database: MYSQL
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: false
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL8Dialect
+#        dialect.storage_engine: innodb
+
+# Postgres
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/demoDB?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: MySQL
+    driver-class-name: org.postgresql.Driver
+    #    JDBC : SGDB :// HOST : PORT / DB
+    url: jdbc:postgresql://localhost:5432/aos
+    username: postgres
+    password: postgres
   jpa:
-    database: MYSQL
+    database: postgresql
     hibernate:
       ddl-auto: update
-    show-sql: false
-    properties:      
+    show-sql: true
+    properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-        dialect.storage_engine: innodb
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         
 server:
   port: 8444
